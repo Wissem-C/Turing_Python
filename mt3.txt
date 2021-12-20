@@ -1,0 +1,9 @@
+name: Remplacer les 1 par des 0 et les 0 par des 1
+init: A
+accept: Z
+A,1
+A,0,>
+A,0
+A,1,>
+A,_
+Z,_,>
