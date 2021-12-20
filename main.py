@@ -40,9 +40,8 @@ while j < 4:
     turing = initilisation_mt(sys.argv[j])
     config = parse_configuration(sys.argv[j])
     affiche_config_mt(turing)
+    calcul(config, turing)
     j += 1
-
-    # calcul(config, turing)
 
 # config1 = parse_configuration(sys.argv[1])
 # config2 = parse_configuration(sys.argv[2])
@@ -50,3 +49,10 @@ while j < 4:
 # calcul(config1, turing)
 # calcul(config2, turing)
 # calcul(config3, turing)
+
+
+# turing = initilisation_mt("mt3.txt")
+# config = parse_configuration("mt3.txt")
+# calcul(config, turing)
+
+# 01001

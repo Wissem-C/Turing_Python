@@ -34,11 +34,16 @@ def un_pas_calcul(config, turing):
 
 def calcul(config, turing):
     for i in range(len(turing.bande)):
+
         liste_turing = un_pas_calcul(config, turing)
         print("chemin ", liste_turing)
 
+        if not liste_turing:
+            print("La tête est deplacé sur  : ", turing.tete_lecture)
+            print("FIN NON ACCEPTÉ")
+            break
+
         if turing.etat_courant == turing.qaccept and turing.tete_lecture == '_':
-            # print("final", liste_turing[0])
             print("La tête est deplacé sur  : ", turing.tete_lecture)
             print("FIN ACCEPTÉ")
             break
@@ -50,15 +55,9 @@ def calcul(config, turing):
             print("bande i+1", turing.bande[i + 1])
         if '<' == liste_turing[2]:
             print("La tête de lecture avant est : ", turing.tete_lecture)
-            turing.bande[i] = liste_turing[1]
+            turing.bande[i-1] = liste_turing[1]
             turing.tete_lecture = turing.bande[i - 1]
             print("bande i-1", turing.bande[i - 1])
-
-        if turing.etat_courant != turing.qaccept and turing.tete_lecture == '_' and i == range(len(turing.bande)):
-            print("final", liste_turing[0])
-            print("La tête est deplacé sur  : ", turing.tete_lecture)
-            print("FIN NON ACCEPTÉ")
-            sys.exit()
 
         print("Nous ecrivons un : ", liste_turing[1])
         print("Nous passons sur l'état :", turing.etat_courant)

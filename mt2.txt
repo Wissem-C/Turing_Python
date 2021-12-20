@@ -1,4 +1,4 @@
-name: delete first and last letter
+name: Delete first and last letter
 init: A
 accept: Z
 A,1
